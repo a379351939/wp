@@ -1,0 +1,48 @@
+
+
+
+.a{
+	height: 0;
+	width: 0;
+	margin: 10px 0;
+	border-top: 20px solid #050aff;
+	border-bottom:20px solid #008b01;
+	border-left: 20px solid #ff0400;
+	border-right: 20px solid #ffff00;
+}
+
+.a.a2{
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+}
+
+.a.a3{
+	border-top:20px solid transparent;
+	border-bottom:20px solid transparent;
+	border-right: 20px solid transparent;
+}
+
+.a.a4{
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid transparent;
+}
+
+.a.a5{
+	border-top: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+}
+
+.a.a6{
+	border-top: 20px solid transparent;
+	border-bottom:20px #ff0400 solid;
+	border-right: 20px solid transparent;
+}
+
+.a.a7{
+	border-top: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-right: 20px solid #008b01;
+}
