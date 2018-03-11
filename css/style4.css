@@ -1,0 +1,62 @@
+body,h1,p,ul,li,a{
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	font: 14px/1.2 Arial;
+	text-align: center;
+	background-color: #fff2e3;
+	color: #86968e;
+}
+
+.btn{
+	display: inline-block;
+	background-color: #72b890;
+	padding: 8px 10px;
+	border-radius:3px;
+	margin:0 5px;
+}
+
+.btn>a{
+	color: #fff;
+}
+
+.title{
+	font-size: 40px;
+	margin-top: 30px;
+}
+
+.introduce{
+	color: #b7bbb0;
+	font-size: 12px;
+	margin-top: 20px;
+}
+
+.btn-ct{
+	margin-top: 30px;
+}
+
+.wk-img{
+	margin-top: 30px;
+}
+
+.opeartion{
+	margin-top: 30px;
+}
+
+.claim{
+	margin-top: 30px;
+}
+
+.claim>a{
+	color: #72b890;
+}
