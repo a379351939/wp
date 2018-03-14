@@ -1,0 +1,50 @@
+div,h2,p,span{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-color:#fff;
+}
+
+.layout{
+  width: 600px;
+  margin: 0 auto;
+}
+
+.alert{
+  margin-top: 30px;
+  padding:16px 16px;
+  border-radius: 3px;
+  
+}
+
+.alert>p{
+  margin-top: 20px;
+}
+
+.alert>p,h2,span{
+  color: #fff;
+}
+
+.alert.congra{
+  background-color:#4CAF50;
+}
+
+.alert.info{
+  background-color:#2196F3;
+}
+
+.alert.omg{
+  background-color:#f44336;
+}
+
+.alert.warn{
+  background-color:#ff9800;
+}
+
+.alert>span{
+  float: right;
+  cursor:pointer;
+}
+
