@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="login">
-		<form action="information" method="post">
+		<form action="/information" method="post">
 			<div class="username">
 				<label for="username">姓名:</label>
 				<input id="username" type="text" name="username" placeholder="用户名">
@@ -33,7 +33,7 @@
 			</div>
 			<div class="textarea">
 				<label>评论:</label>
-				<textarea rows="15" cols="50" placeholder="ddd"></textarea>
+				<textarea rows="15" cols="50" name="textarea" placeholder="ddd"></textarea>
 			</div>
 			<div class="car">
 				<label>我的car:</label>
@@ -41,9 +41,9 @@
 					<option value="saab">萨博</option>
 					<option value="alto">奥拓</option>
 				</select>
-				<input type="submit" name="submit" value="提交">
+				<!-- <input type="submit" name="submit" value="提交"> -->
+				<button type="submit">提交</button>
 			</div>
-
 		</form>
 	</div>	
 </body>
