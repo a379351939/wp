@@ -425,7 +425,7 @@ textarea::placeholder {
 .fakeimg {
   display: table-cell;
   width: 160px;
-  height: 160px;
+  height: 104px;
   border-radius: 50%;
   color: #fff;
   background: #000;
