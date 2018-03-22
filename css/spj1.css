@@ -418,14 +418,14 @@ textarea::placeholder {
   left: 50%;
   margin-left: -2px;
   width: 2px;
-  height: 203px;
+  height: 104px;
   background: #000;
 }
 
 .fakeimg {
   display: table-cell;
   width: 160px;
-  height: 104px;
+  height: 160px;
   border-radius: 50%;
   color: #fff;
   background: #000;
