@@ -83,6 +83,7 @@ section:nth-child(even) {
 
 header {
   font: bold 16px  Arical;
+  margin-bottom: 100px;
 }
 
 header a {
