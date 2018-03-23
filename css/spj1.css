@@ -444,7 +444,7 @@ textarea::placeholder {
 
 @media (max-width: 900px){
   .layout .box-about {
-    padding: 0px 30px;
+    padding: 0px 3%;
     text-align: left; 
   }
 
@@ -479,15 +479,6 @@ textarea::placeholder {
   margin-right: 0;
 }
 
-@media (max-width: 900px) {
-  .layout .box-contact {
-    float: none;
-    width: auto;
-    margin: 0 30px;
-  }
-}
-
-
 .box-contact>input{
   width: 92%;
   height: 34px;
@@ -504,6 +495,19 @@ textarea::placeholder {
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .layout .box-contact {
+    float: none;
+    width: auto;
+    margin: 0 30px;
+  }
+
+  .box-contact>input,
+  .box-contact>textarea {
+    width: 84%;
+  }
 }
 
 .box-contact>button {
