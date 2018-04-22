@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style11.css">
+  <title>登录</title>
+</head>
+<body>
+  <header>
+    <a class="iconfont icon-76" href="#"></a>
+  </header>
+  <main>
+    <div class="flip-modal login">
+      <div class="modal modal-login">
+        <a class="iconfont icon-close close " href="#"></a>
+        <div class="tabs">
+          <a class="login" href="#">登录</a>
+          <a class="register" href="#">注册</a>
+        </div>
+        <div class="content">
+          <div class="erromsg"></div>
+          <form action="/login" method="post">
+            <div class="input-field">
+              <i class="iconfont icon-user"></i>
+              <input name="username" type="text" placeholder="用户名">
+            </div>
+            <div class="input-field">
+              <i class="iconfont icon-lock"></i>
+              <input name="password" type="password" placeholder="密码">
+            </div>
+            <div class="input-field">
+              <input type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal modal-register">
+        <a class="iconfont icon-close close " href="#"></a>
+        <div class="tabs">
+          <a class="login" href="#">登录</a>
+          <a class="register" href="#">注册</a>
+        </div>
+        <div class="content">
+          <div class="erromsg"></div>
+          <form action="/register" method="post">
+            <div class="input-field">
+              <i class="iconfont icon-user"></i>
+              <input name="username" type="text" placeholder="输入用户名">
+            </div>
+            <div class="input-field">
+              <i class="iconfont icon-lock"></i>
+              <input name="password" type="password" placeholder="输入密码">
+            </div>
+            <div class="input-field">
+              <i class="iconfont icon-lock"></i>
+              <input name="password2" type="password" placeholder="再次输入密码">
+            </div>
+            <div class="input-field">
+              <input type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    function $(selector) {
+      return document.querySelector(selector)
+    }
+
+    function $$(selector) {
+      return document.querySelectorAll(selector)
+    }
+
+    $('header>a').onclick = function(e) {
+      e.stopPropagation()
+      $('.flip-modal').classList.toggle('active')
+    }
+    
+    $('.flip-modal').addEventListener('click', function(e) {
+      e.stopPropagation()
+      if(e.target.classList.contains('register')){
+        $('.flip-modal').classList.remove('login')
+        $('.flip-modal').classList.add('register')
+      }
+      if(e.target.classList.contains('login')){
+        $('.flip-modal').classList.remove('register')
+        $('.flip-modal').classList.add('login')
+      }
+      if(e.target.classList.contains('close')) {
+        $('.flip-modal').classList.toggle('active')
+      }
+    })
+
+    document.addEventListener('click', function(){
+      if($('.flip-modal').classList.contains('active')) {
+        $('.flip-modal').classList.remove('active')
+      }
+    })
+
+    $('.modal-login form').addEventListener('submit', function(e){
+      e.preventDefault()
+      if(!/^\w{6,10}$/g.test($('.modal-login input[name=username]').value)) {
+        $('.modal-login .erromsg').innerText = '用户名需输入6-20个字符，只能包括字母、数字、下划线'
+        return false
+      }
+            if(!/^\w{6,10}$/g.test($('.modal-login input[name=password]').value)) {
+        $('.modal-login .erromsg').innerText = '密码需输入6-20个字符，只能包括字母、数字、下划线'
+        return false
+      }
+      this.submit()
+    })
+
+    $('.modal-register form').addEventListener('submit', function(e){
+      e.preventDefault()
+      if(!/^\w{6,10}$/g.test($('.modal-register input[name=username]').value)) {
+        $('.modal-register .erromsg').innerText = '用户名需输入6-20个字符，只能包括字母、数字、下划线'
+        return false
+      }
+      if(!/^\w{6,10}$/g.test($('.modal-register input[name=password]').value)) {
+        $('.modal-register .erromsg').innerText = '密码需输入6-20个字符，只能包括字母、数字、下划线'
+        return false
+      }
+      if($('.modal-register input[name=password]').value !== $('.modal-register input[name=password2]').value) {
+        $('.modal-register .erromsg').innerText = '两次密码输入不一致'
+        return false        
+      }
+      this.submit()
+    })
+
+  </script>
+</body>
+</html>

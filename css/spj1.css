@@ -77,7 +77,7 @@ section>dl {
   margin-top: 37px;
 }
 
-section:nth-child(even) {
+section:nth-child(odd) {
   background-color: #ecebe8;
 }
 
@@ -123,6 +123,7 @@ textarea::placeholder {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  margin: 0 20px;
 }
 
 .container-around {
