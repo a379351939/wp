@@ -1,0 +1,122 @@
+/*icon*/
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1525265646742'); /* IE9*/
+  src: url('iconfont.eot?t=1525265646742#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1525265646742') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1525265646742#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:43px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shangyiji:before { content: "\e658"; }
+
+.icon-xiayiji:before { content: "\e65a"; }
+
+.icon-zanting:before { content: "\e65b"; }
+
+.icon-kaishi:before { content: "\e65d"; }
+
+
+/*reset*/
+
+* {margin: 0; padding: 0}
+
+a {text-decoration: none; color: #000;}
+
+ul {list-style: none;}
+
+/*common*/
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+html,body {
+  height: 100%;
+}
+
+.cover {
+  height: 100%;
+  background: no-repeat;
+  background-size: cover;
+  filter: blur(5px);
+}
+
+.musicbox {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1), 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+.control a {
+  cursor: pointer;
+}
+
+.panel {
+  width: 340px;
+  padding: 20px 20px 5px 20px;
+}
+
+.info {
+  float: right;
+  width: 178px;
+}
+
+.info .title {
+  font-size: 18px;
+}
+
+.info .author {
+  font-size: 13px;
+}
+
+.bar {
+  margin: 5px 0px;
+  height: 3px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.bar .progress-now {
+  height: 3px;
+  width: 0%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.time {
+  text-align: right;
+}
+
+.list li {
+  position: relative;
+  border-top: 1px solid;
+  padding: 4px 10px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.list li:hover {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.list li.playing:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content:'';
+  width: 8px;
+  height: 29px;
+  background: rgba(0, 0, 0, 0.2);
+}

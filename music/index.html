@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>音乐播放器</title>
+  <link rel="stylesheet" href="css/music.css">
+</head>
+<body>
+  <div class="cover"></div>
+  <div class="musicbox">
+    <div class="panel">
+      <div class="info clearfix">
+        <div class="title">my song</div>
+        <div class="author">author</div>
+      </div>      
+      <div class="control">
+        <span class="back"><a class="iconfont icon-shangyiji"></a></span>
+        <span class="play"><a class="iconfont icon-kaishi"></a></span>
+        <span class="forward"><a class="iconfont icon-xiayiji"></a></span>
+      </div>
+      <div class="progress">
+        <div class="bar">
+          <div class="progress-now"></div>
+        </div>
+        <div class="time clearfix">0:00</div>
+      </div>
+    </div>
+    <ul class="list"></ul>
+  </div>
+  <script>
+    var currentIndex = 0
+    var audio = new Audio()
+    var clock
+    var musicList = []
+
+    getMusicList(function(list){
+      musicList = list
+      generateList(list)
+      loadMusic(musicList[currentIndex])
+    })
+
+    audio.ontimeupdate = function() {
+      $('.bar .progress-now').style.width = (audio.currentTime/audio.duration)*100 + '%'
+    }
+
+    audio.onplay = function(){
+      clock = setInterval(function(){
+        var min = Math.floor(audio.currentTime/60)
+        var sec = Math.floor(audio.currentTime%60) + ''
+        sec = sec.length === 2 ? sec : '0' + sec
+        $('.time').innerText = min + ':' + sec  
+      }, 1000)
+    }
+
+    audio.onended = function(){
+      autoplay = true
+      currentIndex = ++currentIndex%musicList.length
+      loadMusic(musicList[currentIndex])
+    }
+
+    $('.play').onclick = function(){
+      if(audio.paused) {
+        audio.play()
+        $('.play .iconfont').classList.remove('icon-kaishi')
+        $('.play .iconfont').classList.add('icon-zanting')
+      } else {
+        audio.pause()
+        $('.play .iconfont').classList.remove('icon-zanting')
+        $('.play .iconfont').classList.add('icon-kaishi')
+      }
+    }
+
+    $('.forward').onclick = function() {
+      currentIndex = ++currentIndex%musicList.length
+      loadMusic(musicList[currentIndex])
+    }
+
+    $('.back').onclick = function() {
+      currentIndex = (musicList.length- ++currentIndex)%musicList.length
+      loadMusic(musicList[currentIndex])
+    }
+
+    $('.bar').onclick = function(e) {
+      var percent = e.offsetX / parseInt(getComputedStyle($('.bar')).width)
+      audio.currentTime = audio.duration * percent
+    }
+
+    $('.list').onclick = function(e){
+      for(var i = 0; i < this.children.length; i++) {
+        if(this.children[i] === e.target) {
+          currentIndex = i
+        }
+      }
+      loadMusic(musicList[currentIndex])
+    }
+
+    function loadMusic(musicObj){
+      initbar()
+      audio.src = musicObj.src
+      $('.cover').style.backgroundImage = 'url(' + musicObj.img + ')'
+      $('.info .title').innerText = musicObj.title
+      $('.info .author').innerText = musicObj.author
+      for(var i = 0; i < $('.list').children.length; i++){
+        $('.list').children[i].classList.remove('playing')
+      }
+      $('.list').children[currentIndex].classList.add('playing')
+    }    
+
+    function $(selector) {
+      return document.querySelector(selector)
+    }
+
+    function getMusicList(callback){
+      var xhr = new XMLHttpRequest()
+      xhr.open('GET', '/music.json', true)
+      xhr.onload = function(){
+        if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+          callback(JSON.parse(this.responseText))
+        } else {
+          console.log('404 not found')
+        }
+      }
+      xhr.onerror = function(){
+        console.log('网络异常')
+      }
+      xhr.send()
+    }
+
+    function initbar(){
+      audio.paused ? audio.autoplay = false : audio.autoplay = true
+      $('.bar .progress-now').style.width = 0
+    }
+
+    function generateList(obj) {
+      for(var key in obj) {
+        var creatli = document.createElement('li')
+        creatli.innerText = obj[key].title + '-' + obj[key].author
+        $('.list').appendChild(creatli)
+      }
+    }
+  </script>
+</body>
