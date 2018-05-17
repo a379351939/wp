@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>hello world</h1>
+</body>
+<script>
+  var xhr = new XMLHttpRequest()
+  xhr.open('GET','http://127.0.0.1:8080/getWeather', true)
+  xhr.send()
+  xhr.onload = function(){
+    console.log(xhr.responseText)
+  }
+</script>
+</html>
