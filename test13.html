@@ -30,14 +30,11 @@
     })
 
     $('.edi').on('click', function(){
-      if($('.hover').is(':hidden')) {
-        $('.hover').fadeIn()
-      } else {
-        $('.hover').fadeOut()
-      }
+      $('.ele').toggleClass('cover')
     })
 
     $('.add').on('click', function(){
+      $('.ele').removeClass('cover')
       var produces = getData()
       $.each(produces, function(idx, obj){
         var elepro = getEle(obj)
