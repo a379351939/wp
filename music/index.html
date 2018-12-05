@@ -111,19 +111,38 @@
     }
 
     function getMusicList(callback){
-      var xhr = new XMLHttpRequest()
-      xhr.open('GET', '/music.json', true)
-      xhr.onload = function(){
-        if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-          callback(JSON.parse(this.responseText))
-        } else {
-          console.log('404 not found')
-        }
-      }
-      xhr.onerror = function(){
-        console.log('网络异常')
-      }
-      xhr.send()
+      // var xhr = new XMLHttpRequest()
+      // xhr.open('GET', '/music.json', true)
+      // xhr.onload = function(){
+      //   if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+      //     callback(JSON.parse(this.responseText))
+      //   } else {
+      //     console.log('404 not found')
+      //   }
+      // }
+      // xhr.onerror = function(){
+      //   console.log('网络异常')
+      // }
+      // xhr.send()
+      var responseText = [{
+        "src": "http://113.105.141.23/amobile.music.tc.qq.com/C400004OxZnj2SktXa.m4a?guid=7549905143&vkey=FCB88309E8E4EDC9E81C3B682C5500C17760FB679F5FE7041C3A91A82B781AF300CF12216FA230D87CB462E1746DF14BB8C307D39A1FAAB3&uin=0&fromtag=66",
+        "title": "空城",
+        "author":"杨坤",
+        "img":"https://y.gtimg.cn/music/photo_new/T002R300x300M0000008UYdN0uEt2J.jpg?max_age=2592000"
+      },
+        // {
+        //   "src": "https://oss.v2url.com/2018/05/04/776d1135a26dd319634b4d507b51da82.m4a",
+        //   "title": "空空如也",
+        //   "author": "任然",
+        //   "img": "https://y.gtimg.cn/music/photo_new/T002R300x300M000001cZsHj3fzHH5.jpg?max_age=2592000"
+        // },
+        {
+          "src": "http://113.96.98.144/amobile.music.tc.qq.com/C4000026ylET2sXg4E.m4a?guid=7549905143&vkey=E799A700C96E4B1385D094DA573A1044FACC93CAC6B96D06B31029D9C46EF64971F1936D1A17C4D40CFECAB7B8C223C2B0D55FA8DA30350D&uin=0&fromtag=66",
+          "title": "就这样",
+          "author": "李荣浩",
+          "img": "https://y.gtimg.cn/music/photo_new/T002R300x300M000003PTZBu0IXqg2.jpg?max_age=2592000"
+        }]
+      callback(responseText)
     }
 
     function initbar(){
